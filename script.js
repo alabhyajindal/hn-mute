@@ -19,7 +19,7 @@ function main(muted_words) {
 
   submissions.forEach((submission) => {
     // Case insensitive matching
-    const title = submission.innerHTML.toLowerCase()
+    const title = submission.innerText.toLowerCase()
     // true if the submission contains a word that's muted
     const wordInSubmission = muted_words.some((word) => {
       const re = new RegExp(`\\b${word}\\b`)
@@ -36,7 +36,7 @@ function main(muted_words) {
 
       // Updating the rank so the final list are in order
       const rank = titleParent.querySelector('.rank')
-      rank.innerHTML = ++count
+      rank.innerText = ++count
 
       // Appending to the new table body
       newTableBody.appendChild(titleParent)

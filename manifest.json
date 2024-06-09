@@ -33,7 +33,7 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "addon@example.com"
+      "id": "{675d69a2-f14d-4724-bb46-437b0177244d}"
     }
   }
 }
