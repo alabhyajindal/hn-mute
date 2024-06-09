@@ -21,7 +21,7 @@ function main(muted_words) {
 
       tableRow.appendChild(titleParent)
       tableRow.appendChild(descParent)
-      tableRow.appendChild(spacerElem)
+      tableRow.appendChild(spacerElem.cloneNode(false))
     }
   })
 }
