@@ -1,0 +1,20 @@
+{
+  "name": "hn-mute",
+  "version": "0.0.1",
+  "description": "Mute words on Hacker News",
+  "scripts": {
+    "dev": "web-ext run",
+    "android": "web-ext run -t firefox-android --android-device=$ANDROID_DEVICE_ADB_ID --firefox-apk=org.mozilla.fenix",
+    "lint": "web-ext lint",
+    "build": "web-ext build --overwrite-dest"
+  },
+  "keywords": [
+    "hacker news",
+    "hn"
+  ],
+  "author": "Alabhya Jindal",
+  "license": "MIT",
+  "devDependencies": {
+    "web-ext": "^8.0.0"
+  }
+}
