@@ -15,7 +15,14 @@
 
   "content_scripts": [
     {
-      "matches": ["*://news.ycombinator.com/*"],
+      "matches": [
+        "*://news.ycombinator.com/",
+        "*://news.ycombinator.com/news*",
+        "*://news.ycombinator.com/newest*",
+        "*://news.ycombinator.com/front*",
+        "*://news.ycombinator.com/ask*",
+        "*://news.ycombinator.com/show*"
+      ],
       "run_at": "document_end",
       "js": ["script.js"]
     }

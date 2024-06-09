@@ -1,9 +1,15 @@
 function main(muted_words) {
-  const submissions = Array.from(document.querySelectorAll('.titleline > a'))
-  const tableRow = document.querySelector('#pagespace').nextElementSibling
-  const spacerElem = document.querySelector('.spacer')
+  const pagespace = document.querySelector('#pagespace')
+  const tableRow = pagespace.nextElementSibling
+  const submissions = Array.from(tableRow.querySelectorAll('.titleline > a'))
+  console.log(submissions)
+  const tableBody = tableRow.querySelector('tbody')
 
-  tableRow.innerHTML = ''
+  const spacerElem = document.querySelector('.spacer')
+  const morespace = tableBody.children[tableBody.children.length - 2]
+  const more = tableBody.children[tableBody.children.length - 1]
+
+  const newTableBody = document.createElement('tbody')
   let count = 0
 
   submissions.forEach((submission) => {
@@ -19,11 +25,15 @@ function main(muted_words) {
       const rank = titleParent.querySelector('.rank')
       rank.innerHTML = ++count
 
-      tableRow.appendChild(titleParent)
-      tableRow.appendChild(descParent)
-      tableRow.appendChild(spacerElem.cloneNode(false))
+      newTableBody.appendChild(titleParent.cloneNode(true))
+      newTableBody.appendChild(descParent.cloneNode(true))
+      newTableBody.appendChild(spacerElem.cloneNode(true))
     }
   })
+
+  newTableBody.appendChild(morespace)
+  newTableBody.appendChild(more)
+  tableBody.replaceChildren(newTableBody)
 }
 
 const getOptions = browser.storage.sync.get('words')
