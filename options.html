@@ -6,24 +6,44 @@
     <title>Mute for HN</title>
   </head>
   <style>
-    body {
-      margin: 1em;
+    html {
+      color-scheme: light dark;
     }
+
+    body {
+      margin: 0.2em;
+      margin-bottom: 1em;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #23222b;
+        color: #fbfbfe;
+      }
+    }
+
     textarea {
       resize: vertical;
       padding: 4px;
+    }
+
+    .notice {
+      margin-top: 1em;
+    }
+
+    .hidden {
+      opacity: 0;
     }
   </style>
   <body>
     <h3>Add muted words, one per line</h3>
     <form>
-      <textarea id="words" rows="10" cols="50"></textarea>
+      <textarea class="words" rows="10" cols="50"></textarea>
       <br />
       <br />
       <button type="submit">update</button>
     </form>
-
-    <div id="notice"></div>
+    <div class="notice hidden">Updated. Refresh HN tabs.</div>
     <script src="options.js"></script>
   </body>
 </html>

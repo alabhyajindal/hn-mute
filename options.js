@@ -1,25 +1,28 @@
 function saveOptions(e) {
   e.preventDefault()
   browser.storage.sync.set({
-    words: document.querySelector('#words').value,
+    words: document.querySelector('.words').value,
   })
-  console.log(document.querySelector('#words'))
-  notice.innerHTML = '<p>Updated, refresh existing Hacker News tabs</p>'
+  notice.classList.remove('hidden')
   setTimeout(() => {
-    notice.innerHTML = ''
-  }, 1000)
+    notice.classList.add('hidden')
+  }, 1200)
 }
 
 function restoreOptions() {
   let getting = browser.storage.sync.get('words')
   getting.then(
     (options) => {
-      document.querySelector('#words').value = options.words || ''
+      const lines = options.words
+        ?.split('\n')
+        .filter((line) => line.trim() !== '')
+      const words = lines.join('\n')
+      document.querySelector('.words').value = words || ''
     },
     (err) => console.error(err)
   )
 }
 
-const notice = document.querySelector('#notice')
+const notice = document.querySelector('.notice')
 document.addEventListener('DOMContentLoaded', restoreOptions)
 document.querySelector('form').addEventListener('submit', saveOptions)

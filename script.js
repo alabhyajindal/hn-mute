@@ -61,7 +61,8 @@ const getOptions = browser.storage.sync.get('words')
 
 getOptions.then(
   (options) => {
-    const muted_words = options.words?.split('\n') || []
+    const muted_words =
+      options.words?.split('\n').filter((line) => line.trim() !== '') || []
     main(muted_words)
   },
   (err) => console.error(err)
