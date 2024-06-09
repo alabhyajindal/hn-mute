@@ -15,6 +15,7 @@ async function restoreOptions() {
     const lines = options.words
       ?.split('\n')
       .filter((line) => line.trim() !== '')
+      .map((line) => line.trim())
     const words = lines.join('\n')
     document.querySelector('.words').value = words || ''
   } catch (err) {

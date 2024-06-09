@@ -63,7 +63,10 @@ async function init() {
   try {
     const options = await browser.storage.sync.get('words')
     const muted_words =
-      options.words?.split('\n').filter((line) => line.trim() !== '') || []
+      options.words
+        ?.split('\n')
+        .filter((line) => line.trim() !== '')
+        .map((line) => line.trim()) || []
     main(muted_words)
   } catch (err) {
     console.error(err)
