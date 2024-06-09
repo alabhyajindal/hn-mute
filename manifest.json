@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Channel Filter",
+  "name": "Mute for HN",
   "version": "0.0.1",
 
-  "description": "Filter YouTube channels from search",
+  "description": "Mute words on Hacker News",
 
   "icons": {
     "48": "icons/border-48.png"
@@ -15,12 +15,17 @@
 
   "content_scripts": [
     {
-      "matches": ["*://*.youtube.com/*"],
+      "matches": ["*://news.ycombinator.com/*"],
       "js": ["script.js"],
       "css": ["style.css"]
     }
   ],
 
-  "permissions": ["storage"]
-}
+  "permissions": ["storage"],
 
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@example.com"
+    }
+  }
+}

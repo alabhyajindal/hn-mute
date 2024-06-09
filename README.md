@@ -1,3 +1,3 @@
 # Channel Filter
 
-Filter channels from YouTube search results.
+Filter words from YouTube search results.

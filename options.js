@@ -1,9 +1,9 @@
 function saveOptions(e) {
   e.preventDefault()
   browser.storage.sync.set({
-    channels: document.querySelector('#channels').value,
+    words: document.querySelector('#words').value,
   })
-  console.log(document.querySelector('#channels'))
+  console.log(document.querySelector('#words'))
   notice.innerHTML = '<p>Saved, refresh existing YouTube tabs</p>'
   setTimeout(() => {
     notice.innerHTML = ''
@@ -11,10 +11,10 @@ function saveOptions(e) {
 }
 
 function restoreOptions() {
-  let getting = browser.storage.sync.get('channels')
+  let getting = browser.storage.sync.get('words')
   getting.then(
     (options) => {
-      document.querySelector('#channels').value = options.channels || ''
+      document.querySelector('#words').value = options.words || ''
     },
     (err) => console.error(err)
   )
