@@ -4,24 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mute for HN</title>
-    <style>
-      #form {
-        display: flex;
-        border: 1px solid blue;
-      }
-
-      #notice {
-        color: green;
-      }
-    </style>
   </head>
+  <style>
+    body {
+      margin: 1em;
+    }
+    textarea {
+      resize: vertical;
+      padding: 4px;
+    }
+  </style>
   <body>
-    <h3>Add words that you want to mute</h3>
-    <em>One word per line</em>
+    <h3>Add muted words, one per line</h3>
     <form>
-      <label for="words">Words</label>
       <textarea id="words" rows="10" cols="50"></textarea>
-      <button type="submit">Update</button>
+      <br />
+      <br />
+      <button type="submit">update</button>
     </form>
 
     <div id="notice"></div>

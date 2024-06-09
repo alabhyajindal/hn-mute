@@ -16,8 +16,8 @@
   "content_scripts": [
     {
       "matches": ["*://news.ycombinator.com/*"],
-      "js": ["script.js"],
-      "css": ["style.css"]
+      "run_at": "document_end",
+      "js": ["script.js"]
     }
   ],
 

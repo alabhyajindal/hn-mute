@@ -27,26 +27,36 @@ function onSearchPage() {
 }
 
 function main() {
-  const muted_submissions = SUBMISSIONS.forEach((submission) => {
+  const pagespace = document.querySelector('#pagespace')
+  let tableRow = pagespace.nextElementSibling
+
+  const spacerElem = document.createElement('tr')
+  spacerElem.classList.add('spacer')
+  spacerElem.style.height = '5px'
+
+  const ok_submissions = SUBMISSIONS.map((submission) => {
     const title = submission.innerHTML.toLowerCase()
     const wordInSubmission = MUTED_WORDS.some((word) => {
       const re = new RegExp(`\\b${word}\\b`)
       return title.match(re)
     })
 
-    if (wordInSubmission) {
-      // submission.innerHTML = ''
-      const titleParent = submission.closest('tr')
-      const descParent = titleParent.nextElementSibling
-      const spacer = titleParent.previousElementSibling
+    const titleParent = submission.closest('tr')
+    const descParent = titleParent.nextElementSibling
 
-      console.log(spacer)
-      console.log(titleParent)
-      console.log(descParent)
+    return { item: { titleParent, descParent }, ok: !wordInSubmission }
+  }).filter((s) => s.ok)
 
-      // titleParent.remove()
-      // descParent.remove()
-    }
+  tableRow.innerHTML = ''
+
+  ok_submissions.forEach((submission, i) => {
+    let { titleParent, descParent } = submission.item
+    const rank = titleParent.querySelector('.rank')
+    rank.innerHTML = i + 1
+
+    tableRow.appendChild(titleParent)
+    tableRow.appendChild(descParent)
+    tableRow.appendChild(spacerElem)
   })
 }
 

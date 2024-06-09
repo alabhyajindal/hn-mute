@@ -4,7 +4,7 @@ function saveOptions(e) {
     words: document.querySelector('#words').value,
   })
   console.log(document.querySelector('#words'))
-  notice.innerHTML = '<p>Saved, refresh existing YouTube tabs</p>'
+  notice.innerHTML = '<p>Updated, refresh existing Hacker News tabs</p>'
   setTimeout(() => {
     notice.innerHTML = ''
   }, 1000)
