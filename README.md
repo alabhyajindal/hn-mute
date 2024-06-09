@@ -6,12 +6,12 @@ HN Mute allows you to remove submissions on HN based on words. It works on Firef
 
 ## Installation
 
-Download the extension from [Firefox Add-ons](https://addons.mozilla.org/).
+Download the extension from [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/hn-mute/).
 
 ## Usage
 
 1. Open extension preferences
-2. Add the words you want to mute
+2. Add words you want to mute
 
 Submissions containing muted words will now be hidden automatically.
 
