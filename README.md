@@ -13,4 +13,4 @@ Download the extension from [Firefox Add-ons](https://addons.mozilla.org/).
 1. Open extension preferences
 2. Add the words you want to mute
 
-Submissions containing a muted word will be now hidden automatically.
+Submissions containing muted words will now be hidden automatically.

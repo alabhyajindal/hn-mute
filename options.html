@@ -6,13 +6,19 @@
     <title>Mute for HN</title>
   </head>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     html {
       color-scheme: light dark;
     }
 
     body {
-      margin: 0.2em;
-      margin-bottom: 1em;
+      margin-inline: 0.2em;
+      margin-block: 1em;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -20,6 +26,14 @@
         background-color: #23222b;
         color: #fbfbfe;
       }
+    }
+
+    h3 {
+      margin-bottom: 0.4em;
+    }
+
+    form {
+      margin-top: 1em;
     }
 
     textarea {
@@ -37,6 +51,8 @@
   </style>
   <body>
     <h3>Add muted words, one per line</h3>
+    <p>Submissions containing muted words will be hidden.</p>
+    <p>Comments are not affected.</p>
     <form>
       <textarea class="words" rows="10" cols="50"></textarea>
       <br />
