@@ -14,3 +14,7 @@ Download the extension from [Firefox Add-ons](https://addons.mozilla.org/).
 2. Add the words you want to mute
 
 Submissions containing muted words will now be hidden automatically.
+
+## License
+
+[MIT](https://github.com/alabhyajindal/hn-mute/blob/main/LICENSE)
