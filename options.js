@@ -9,18 +9,17 @@ function saveOptions(e) {
   }, 1200)
 }
 
-function restoreOptions() {
-  let getting = browser.storage.sync.get('words')
-  getting.then(
-    (options) => {
-      const lines = options.words
-        ?.split('\n')
-        .filter((line) => line.trim() !== '')
-      const words = lines.join('\n')
-      document.querySelector('.words').value = words || ''
-    },
-    (err) => console.error(err)
-  )
+async function restoreOptions() {
+  try {
+    const options = await browser.storage.sync.get('words')
+    const lines = options.words
+      ?.split('\n')
+      .filter((line) => line.trim() !== '')
+    const words = lines.join('\n')
+    document.querySelector('.words').value = words || ''
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 const notice = document.querySelector('.notice')

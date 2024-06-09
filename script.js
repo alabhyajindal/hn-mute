@@ -59,11 +59,15 @@ function main(muted_words) {
 // Get the person's preference from storage
 const getOptions = browser.storage.sync.get('words')
 
-getOptions.then(
-  (options) => {
+async function init() {
+  try {
+    const options = await browser.storage.sync.get('words')
     const muted_words =
       options.words?.split('\n').filter((line) => line.trim() !== '') || []
     main(muted_words)
-  },
-  (err) => console.error(err)
-)
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+init()
