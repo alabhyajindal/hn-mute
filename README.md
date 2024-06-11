@@ -2,7 +2,11 @@
 
 Mute words on Hacker News.
 
-HN Mute allows you to remove submissions on HN based on words. It works on Firefox for both Desktop and Android.
+HN Mute allows you to remove submissions on HN based on words. It works on Firefox for both Desktop and Android. 
+
+## Demo
+
+https://github.com/alabhyajindal/hn-mute/assets/52493077/b7a68ba1-edf4-445d-b4b2-9e41b7a94221
 
 ## Installation
 
