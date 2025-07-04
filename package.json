@@ -1,6 +1,6 @@
 {
   "name": "hn-mute",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mute words on Hacker News",
   "scripts": {
     "dev": "web-ext run",

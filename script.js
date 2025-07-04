@@ -1,7 +1,7 @@
 function main(muted_words) {
-  const pagespace = document.querySelector('#pagespace')
+  const pagespace = document.querySelector('#bigbox')
   // The next element after pagespace is a table row
-  const tableRow = pagespace.nextElementSibling
+  const tableRow = pagespace.firstChild.firstChild
   const submissions = Array.from(tableRow.querySelectorAll('.titleline > a'))
   const tableBody = tableRow.querySelector('tbody')
 
